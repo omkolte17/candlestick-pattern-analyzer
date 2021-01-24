@@ -1,0 +1,48 @@
+{% extends "header.html" %}
+{% block content %}
+<h1>Technical Scanner Page</h1>
+<form action="/scanner">
+    <select name="pattern">
+        <option value="">-- Select a Pattern --</option>
+        {% for key in candlestick_patterns %}
+        <option value="{{ key }}" {% if pattern==key %}selected="selected" {% endif %}>
+            {{ candlestick_patterns[key] }}</option>
+        {% endfor %}
+    </select>
+
+    <input class="btn" type="submit" name="pattern" value="Scan" />
+    <input class="btn" type="submit" name="fet" value="Fetch" />
+</form>
+
+<table>
+    <tr>
+        <th>symbol</th>
+        <th>company</th>
+        <th>signal</th>
+    </tr>
+    {% for stock in stocks %}
+    {% if stocks[stock][pattern] %}
+    <tr>
+        <td>
+            {{ stock }}
+        </td>
+        <td>
+            {{ stocks[stock]['company'] }}
+        </td>
+        <td class="{{ stocks[stock][pattern] }}">
+            {{ stocks[stock][pattern]}}
+        </td>
+    <tr>
+        <td colspan="3">
+            <iframe name="ChartImage" id="ChartImage"
+                style="margin: 0px; float: left; clear: both; width: 1139px; height: 591px;" scrolling="no"
+                src="//chartink.com/raw/chartdisplay.php?v=o&amp;t=d&amp;E=1&amp;E2=1&amp;h=1&amp;l=0&amp;vg=1&amp;y=1&amp;s=0&amp;w=0&amp;c1=RSI%7E&amp;c2=14%7E&amp;a1=1&amp;a1t=c&amp;a1v=SMA&amp;a1l=21&amp;a2=1&amp;a2t=c&amp;a2v=SMA&amp;a2l=10&amp;a3l=15&amp;a4l=20&amp;a5l=28&amp;ti=121&amp;d=d&amp;A={{ stock }}&amp;width=1127&amp;is_premium=false&amp;user_id=0"
+                width="100%" height="750" frameborder="0"></iframe>
+            <hr>
+        </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+</table>
+
+{% endblock %}

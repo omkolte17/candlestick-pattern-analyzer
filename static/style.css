@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: arial;
+    margin: 20px;
+}
+
+td {
+    padding: 5px;
+}
+
+.bullish {
+    background: green;
+    color: white;
+}
+
+.bearish {
+    background: red;
+    color: white;
+}

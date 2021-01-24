@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='nav.css') }}">
+    <link rel='stylesheet' type='text/css'
+        href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400'>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+
+</head>
+
+<body>
+    <section>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark shift sticky">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">logo here</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a {% if active=='home' %} class="active" {% endif %} href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a {% if active=='scanner' %} class="active" {% endif %}
+                            href="{{ url_for('scanner') }}">Scanner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a {% if active=='pattern' %} class="active" {% endif %}
+                            href="{{ url_for('patterns') }}">Patterns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a {% if active=='about' %} class="active" {% endif %} href="{{ url_for('about') }}">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>
