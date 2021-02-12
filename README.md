@@ -7,12 +7,18 @@ The program aims to efficiently analyze the candlestick chart/patterns to determ
   <li> Web based technical scanner to display teh stocks which have formed a certain pattern. </li>
 </ol>
 
-## Requirements
-<ol><li> Python 3.8 </li></ol>
+## Languages, Framework, Libraries Used
+<ol>
+<li> Python 3.8 </li>
 <ul>
     <li> Flask Framework </li>
     <li> Technical Analysis Library </li>
 </ul>
+<li> HTML 5 </li>
+<li> CSS3 </li>
+<ul><li> Bootstrap 4 </li></ul>
+<li> JavaScript </li>
+</ol>
 
 ## Additional Information
 ### What is Flask ?
@@ -25,4 +31,3 @@ TA-Lib is an open-source python library that is used in analyzing the stock mark
 
 ## Technical Scanner
 The technical scanner will scan for the data of various stocks and provide all the stocks which has formed a particular pattern along with its candlestick chart like in the below image which shows the `Doji` pattern formed in the stock `COALINDIA`.
-<br><br>![](https://github.com/omkolte17/candlestick-pattern-analyzer/blob/main/images/scanner.png?raw=true)
