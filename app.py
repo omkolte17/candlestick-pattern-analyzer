@@ -3,7 +3,7 @@ import csv
 import talib
 import pandas
 import yfinance as yf
-from flask import Flask, escape, request, render_template
+from flask import Flask, request, render_template
 from patterns import candlestick_patterns
 
 app = Flask(__name__)
