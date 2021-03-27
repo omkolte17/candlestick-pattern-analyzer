@@ -1,7 +1,9 @@
 {% extends "header.html" %}
 {% block content %}
 <div class="container">
-    <form action="/scanner"><br><br><br><br><br>
+    <br><br><br><br><br>
+    <h3 style="text-align: start; padding-bottom: 30px; font-weight: 300;">Technical Scanner</h3>
+    <form action="/scanner">
         <select name="pattern">
             <option value="">-- Select a Pattern --</option>
             {% for key in candlestick_patterns %}
@@ -10,7 +12,10 @@
             {% endfor %}
         </select>
 
+        &nbsp;
+        &nbsp;
         <input class="btn" type="submit" name="pattern" value="Scan" />
+        &nbsp;
         <input class="btn" type="submit" name="fet" value="Fetch" />
     </form>
 

@@ -41,7 +41,10 @@ def scanner():
     elif fet:
         fetch_data()
 
-    return render_template('scanner.html', candlestick_patterns=candlestick_patterns, stocks=stocks, pattern=pattern, fet=fet, active='scanner')
+    return render_template('scanner.html',
+                           candlestick_patterns=candlestick_patterns,
+                           stocks=stocks, pattern=pattern, fet=fet,
+                           active='scanner')
 
 
 @app.route('/about')
