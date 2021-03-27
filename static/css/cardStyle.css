@@ -196,3 +196,68 @@ div.card.show div.flap1 {
 div.card.show div.flap2 {
   transition: all 0.3s 0.2s ease-out;
 }
+
+/* scanner.html css code */
+.p {
+  text-align: left;
+}
+
+.h2 {
+  font-weight: 300;
+}
+
+.h3 {
+  font-weight: 200;
+}
+
+.hr {
+  background-color: gray;
+}
+
+#pattern {
+  width: 350px;
+}
+
+.button {
+  line-height: 1.5;
+  vertical-align: center;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: transparent;
+  padding: .150rem 1.5rem;
+  margin: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+}
+
+.button span {
+  position: relative;
+  z-index: 1;
+}
+
+.button:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #808080;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.button:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
