@@ -4,19 +4,15 @@
     <br><br><br><br><br>
     <h3 style="text-align: start; padding-bottom: 30px; font-weight: 300;">Technical Scanner</h3>
     <form action="/scanner">
-        <select name="pattern">
+        <select id="pattern" name="pattern">
             <option value="">-- Select a Pattern --</option>
             {% for key in candlestick_patterns %}
             <option value="{{ key }}" {% if pattern==key %}selected="selected" {% endif %}>
                 {{ candlestick_patterns[key] }}</option>
             {% endfor %}
         </select>
-
-        &nbsp;
-        &nbsp;
-        <input class="btn" type="submit" name="pattern" value="Scan" />
-        &nbsp;
-        <input class="btn" type="submit" name="fet" value="Fetch" />
+        <button class="button" name="pattern"><span>Scan</span></button>
+        <button class="button" name="fet" value="Fetch"><span>Fetch</span></button>
     </form>
 
     <table>
