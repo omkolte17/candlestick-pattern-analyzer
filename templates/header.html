@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='favicon//site.webmanifest') }}">
+
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cardStyle.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
@@ -13,6 +21,8 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/cardScript.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+
 </head>
 
 <body class="dark hero-anime">
@@ -22,7 +32,9 @@
                 <div class="col-12">
                     <nav class="navbar navbar-expand-md navbar-light">
 
-                        <a class="navbar-brand" href="{{ url_for('index') }}"><img src="<logo_source_here>" alt=""></a>
+                        <a class="navbar-brand" href="{{ url_for('index') }}"><img
+                                src="{{ url_for('static', filename='icons/logo.png') }}" style="width:50px; height:50px"
+                                alt=""></a>Analyzer
 
                         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
                             data-target="#collapsibleNavbar" aria-expanded="false">
