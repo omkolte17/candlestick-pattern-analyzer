@@ -10,18 +10,19 @@ from patterns import candlestick_patterns
 
 app = Flask(__name__)
 
+
 @app.route('/getjson')
 def getjson():
-    ticker = request.args.get('symbol',None)
+    ticker = request.args.get('symbol', None)
     if ticker is None:
         return {
-            "error":"No symbol found."
+            "error": "No symbol found."
         }
     else:
         ticker = ticker.upper()
-        path = os.path.join(os.getcwd(),"data", "stocks", ticker+".csv")
+        path = os.path.join(os.getcwd(), "data", "stocks", ticker+".csv")
         return csv_to_json(path)
-    
+
 
 @app.route('/scanner')
 def scanner():
@@ -52,10 +53,10 @@ def scanner():
                         last = int(j)
                     if last != 0:
                         break
-                    
+
                     if i == 50:
                         break
-                    
+
                     i += 1
 
                 if last > 0:
@@ -99,7 +100,7 @@ def fetch_data():
             # print(symbol)
             data = yf.download(
                 # date format: yyyy-mm-dd
-                symbol + '.NS', start="2017-01-01", end="2020-12-24")
+                symbol + '.NS', start="2020-01-01", end="2021-5-25")
             data.to_csv('data/stocks/{}.csv'.format(symbol))
 
     return {
@@ -157,20 +158,20 @@ def state():
 
     return stock_list
 
+
 def csv_to_json(csvFilePath):
     jsonArray = []
-      
-    #read csv file
-    with open(csvFilePath, encoding='utf-8') as csvf: 
-        #load csv file data using csv library's dictionary reader
-        csvReader = csv.DictReader(csvf) 
 
-        #convert each csv row into python dict
-        for row in csvReader: 
-            #add this python dict to json array
+    # read csv file
+    with open(csvFilePath, encoding='utf-8') as csvf:
+        # load csv file data using csv library's dictionary reader
+        csvReader = csv.DictReader(csvf)
+
+        # convert each csv row into python dict
+        for row in csvReader:
+            # add this python dict to json array
             jsonArray.append(row)
-  
-    #convert python jsonArray to JSON String and write to file
+
+    # convert python jsonArray to JSON String and write to file
     jsonString = json.dumps(jsonArray, indent=4)
     return jsonString
-        
