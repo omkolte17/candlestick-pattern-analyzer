@@ -147,11 +147,11 @@ def state():
         df = pandas.read_csv('data/stocks/{}'.format(filename))
 
         if consolidating(df, percentage=2.5):
-            a1 = "{}".format(filename) + "\n"
+            a1 = "{}".format(filename.strip('.csv')) + "\n"
             consolidate_stock += a1
 
         if breaking_out(df):
-            a2 = "{}".format(filename) + "\n"
+            a2 = "{}".format(filename.strip('.csv')) + "\n"
             breakout_stock += a2
 
         stock_list = consolidate_stock + "\n" + breakout_stock
