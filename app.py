@@ -7,6 +7,7 @@ import yfinance as yf
 import json
 from flask import Flask, request, render_template
 from patterns import candlestick_patterns
+from datetime import date
 
 app = Flask(__name__)
 
@@ -92,6 +93,7 @@ def patterns():
 
 @app.route('/fetch_data')
 def fetch_data():
+    current_date = str(date.today())
     with open('data/symbols.csv') as f:
         for line in f:
             if "," not in line:
@@ -100,7 +102,7 @@ def fetch_data():
             # print(symbol)
             data = yf.download(
                 # date format: yyyy-mm-dd
-                symbol + '.NS', start="2020-01-01", end="2021-5-25")
+                symbol + '.NS', start="2020-01-01", end="{}".format(current_date))
             data.to_csv('data/stocks/{}.csv'.format(symbol))
 
     return {
