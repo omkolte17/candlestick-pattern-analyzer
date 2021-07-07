@@ -60,30 +60,14 @@
                                 <script>
                                 
                 var chart = LightweightCharts.createChart(document.getElementById("{{stock}}"), { width: 1100, height: 500 });
-                /*
-                var barSeries = chart.addCandlestickSeries({
-                    upColor: '#6495ED',
-                    downColor: '#FF6347',
-                    borderVisible: false,
-                    wickVisible: true,
-                    borderColor: '#000000',
-                    wickColor: '#000000',
-                    borderUpColor: '#4682B4',
-                    borderDownColor: '#A52A2A',
-                    wickUpColor: '#4682B4',
-                    wickDownColor: '#A52A2A',
-
-                });
-                */
-                //console.log("{{ stocks[stock]['day'] }}")
                 var barSeries{{stock}} = chart.addCandlestickSeries();
                 chart.applyOptions({
                     crosshair: {mode:0,},
                     watermark: {
                         color: 'rgba(255, 255, 255, 0.4)',
                         visible: true,
-                        text: 'Group 2',
-                        fontSize: 24,
+                        text: 'cpanalyzer',
+                        fontSize: 20,
                         horzAlign: 'left',
                         vertAlign: 'bottom',
                     },
