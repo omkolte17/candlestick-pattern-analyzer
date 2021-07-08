@@ -3,16 +3,19 @@ The program aims to efficiently analyze the candlestick chart/patterns to determ
 
 ## Functions
 <ol>
-  <li> Analyze the candlestick chart to determine whether it is consolidating or breaking out. </li>
-  <li> Web based technical scanner to display teh stocks which have formed a certain pattern. </li>
+  <li> Analyze the dataset to determine which stocks are consolidating and breaking out. </li>
+  <li> Web based technical scanner to display the stocks which have formed a certain pattern. </li>
+  <li> Display stocks with their charts in which the selected pattern has been found. </li>
+  <li> The end candle of the pattern will be indicated with a small red arrow. </li>
 </ol>
 
 ## Tech Stack
 <ol>
-<li> Python 3.8 </li>
+<li> Python 3 </li>
 <ul>
     <li> Flask Framework </li>
     <li> Technical Analysis Library </li>
+    <li> Yahoo Finance Library </li>
 </ul>
 <li> HTML 5 </li>
 <li> CSS3 </li>
@@ -36,7 +39,7 @@ The technical scanner will scan for the data of various stocks and provide all t
 <ul>
   <li>Clone the repository and then execute the 'flask run' command on terminal in the project directory.</li>
   <li>The project will be accessible on localhost.</li>
-  <li>Access the project on <u>127.0.0.1:5000</u> instead of <u>localhost:5000</u> after starting the flask server.</li>
+  <li>Access the project on http://127.0.0.1:5000/ instead of http://localhost:5000/ after starting the flask server.</li>
 </ul>
 
 ### Navigate to the Scanner Page
