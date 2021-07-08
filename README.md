@@ -7,7 +7,7 @@ The program aims to efficiently analyze the candlestick chart/patterns to determ
   <li> Web based technical scanner to display teh stocks which have formed a certain pattern. </li>
 </ol>
 
-## Languages, Framework, Libraries Used
+## Tech Stack
 <ol>
 <li> Python 3.8 </li>
 <ul>
@@ -31,3 +31,33 @@ TA-Lib is an open-source python library that is used in analyzing the stock mark
 
 ## Technical Scanner
 The technical scanner will scan for the data of various stocks and provide all the stocks which has formed a particular pattern along with its candlestick chart like in the below image which shows the `Doji` pattern formed in the stock `COALINDIA`.
+
+## Usage
+<ul>
+  <li>Clone the repository and then execute the 'flask run' command on terminal in the project directory.</li>
+  <li>The project will be accessible on localhost.</li>
+  <li>Access the project on <u>127.0.0.1:5000</u> instead of <u>localhost:5000</u> after starting the flask server.</li>
+</ul>
+
+### Navigate to the Scanner Page
+<ol>
+  <li>Update the Dataset</li>
+  <ul>
+    <li>Click on Fetch Button.</li>
+    <b>Note: This will update the dataset.</b>
+  </ul>
+  <br>
+  <li>To Check stocks with certain patterns:</li>
+  <ul>
+    <li>Select the pattern from the drop down list.</li>
+    <li>Click on the Scan button after selecting the pattern.</li>
+    <li>The results will be displayed according to the pattern selected.</li>
+  </ul>
+  <br>
+  <li>To Get the Stocks according to their State:</li>
+  <ul>
+    <li>After updating the dataset, click on the State button.</li>
+    <li>The result will be displayed in a web modal.</li>
+  </ul>
+</ol>
+<b>Note: The pattern will be indicated by a small red arrow which will appear above the candle where the pattern has completed.</b>
